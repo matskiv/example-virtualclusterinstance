@@ -1,0 +1,13 @@
+apiVersion: management.loft.sh/v1
+kind: VirtualClusterInstance
+metadata:
+  name: example-vcluster
+spec:
+  template:
+    helmRelease:
+      values: |-
+        sync:
+          ingresses:
+            enabled: true
+  clusterRef:
+    cluster: worker-cluster-eu
